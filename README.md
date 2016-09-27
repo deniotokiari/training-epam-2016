@@ -1,3 +1,6 @@
+Для гостевого Wi-fi нужен список вида, FirstName_LastName. Прислать на istin2007@gmail.com
+Гостевой Wi-fi делается максимум на месяц. Через месяц надо делать повторно.
+
 HW 26.09.2016
 
 1. Create project (github || bitbucket), soursetree
