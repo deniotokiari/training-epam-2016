@@ -1,4 +1,5 @@
 HW 28.09.2016
+
 1. What is mipmap?
 2. What we need to add to build.gradle to support vector icons in old android versions?
 3. Play with Android Monitor
