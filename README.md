@@ -1,3 +1,5 @@
+<b>UPDATE:</b> This Friday, September 30, class will be held in room 40-16, it's on 4th floor. Please be at <b>the main entrance</b> (NOT the one you ussually use, another one near Beltelekom) at 17.50 and wait while office manager will let you come in. Please don't be late.
+
 HW 28.09.2016
 
 1. What is mipmap?
