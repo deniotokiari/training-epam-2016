@@ -1,4 +1,14 @@
-<b>UPDATE:</b> This Friday, September 30, class will be held in room 40-16, it's on 4th floor. Please be at <b>the main entrance</b> (NOT the one you ussually use, another one near Beltelekom) at 17.50 and wait while office manager will let you come in. Please don't be late.
+HW 03.10.2016
+
+1. Save instance state example
+2. Start activity Intent flags
+3. Try ApiDemos with monitor. Where is the issues perfomance.
+4. Bind service
+5. Foreground service, service in separate process
+
+Links:
+https://www.dropbox.com/s/ax92q35mgtjv9k4/backstack.pdf?dl=0
+https://www.dropbox.com/s/kqe9zbbqrsqekxv/complete_android_fragment_lifecycle.png?dl=0
 
 HW 28.09.2016
 
