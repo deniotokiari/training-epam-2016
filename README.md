@@ -5,6 +5,9 @@ HW 05.10.2016[deadline for all tasks 07.10.2016]
 3. Send project urls with HW and questions as "issues" to this repository!!!
 4. Create samples with Percent layouts, and others
 
+Links:
+https://medium.freecodecamp.com/android-development-best-practices-83c94b027fd3#.si0lrmrgd
+
 HW 03.10.2016
 
 1. Save instance state example
