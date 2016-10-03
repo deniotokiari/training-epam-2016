@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="label_second_activity">Second</string>
+    <string name="label_layouts">Layouts</string>
 </resources>

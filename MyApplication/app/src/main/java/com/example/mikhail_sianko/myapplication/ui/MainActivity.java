@@ -20,6 +20,10 @@ public class MainActivity extends AppCompatActivity {
     private EditText editText;
     private TextView textView;
 
+    public void onStartLayouts(View view) {
+        startActivity(new Intent(this, LayoutsActivity.class));
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

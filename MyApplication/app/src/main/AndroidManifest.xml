@@ -23,6 +23,9 @@
                 <action android:name="second"/>
             </intent-filter>
         </activity>
+        <activity android:name=".ui.LayoutsActivity"
+                  android:exported="true"
+            android:label="@string/label_layouts"/>
 
         <receiver android:name=".data.SomeReceiver">
             <intent-filter>

@@ -26,8 +26,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="add fragment"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onStartLayouts"
+        android:text="start layouts"/>
+    <com.example.mikhail_sianko.myapplication.view.MyCustomViewWithLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></FrameLayout>
+        android:layout_height="match_parent"/>
+
 </LinearLayout>
