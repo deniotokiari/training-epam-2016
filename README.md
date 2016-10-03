@@ -1,6 +1,6 @@
 HW 05.10.2016[deadline for all tasks 07.10.2016]
 
-1. https://goo.gl/photos/H5CtzrZ18pNZwZe26 [launchMode, flags]
+1. https://goo.gl/photos/H5CtzrZ18pNZwZe26, https://goo.gl/photos/Ds5osKmE1BvkP8QLA [launchMode, flags]
 2. Create [static] layouts for social networks(vk.com/linked.in/fb.com/etc.)
 3. Send project urls with HW and questions as "issues" to this repository!!!
 4. Create samples with Percent layouts, and others
