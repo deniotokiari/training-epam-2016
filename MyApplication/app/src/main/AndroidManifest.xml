@@ -25,6 +25,7 @@
         </activity>
         <activity android:name=".ui.LayoutsActivity"
                   android:exported="true"
+                  android:theme="@style/AppTheme"
             android:label="@string/label_layouts"/>
 
         <receiver android:name=".data.SomeReceiver">

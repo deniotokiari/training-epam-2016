@@ -1,5 +1,15 @@
+HW 07.10.2016[deadline for all tasks 07.10.2016]
+
+1. create reusable styles and custom them in prev HW
+2. create custom attributes for different buttons
+3. add screenshots of prev HW to readme.md as images[you can upload everything to git] 
+4. Add left/bottom icon support for IcButton class.
+5. Draw9Patch, create splash screen with bg_splash.9.png
+
 Links: 
 Checklist - https://github.com/IstiN/android_training_2014
+Diagrams - http://www.planttext.com/planttext
+Draw9patch - https://habrahabr.ru/post/113623/
 
 HW 05.10.2016[deadline for all tasks 07.10.2016]
 

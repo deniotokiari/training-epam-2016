@@ -26,4 +26,4 @@ JSON parsing – на примере Twitter API	Android JSONObject/Gson/Jackson
 CursorLoader, CursorAdapter	ContentObserver
 Работа с LocationManager, MapView
 Android Widgets
-Работа с проектами	
+Работа с проектами
