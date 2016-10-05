@@ -1,3 +1,6 @@
+Links: 
+Checklist - https://github.com/IstiN/android_training_2014
+
 HW 05.10.2016[deadline for all tasks 07.10.2016]
 
 1. https://goo.gl/photos/H5CtzrZ18pNZwZe26, https://goo.gl/photos/Ds5osKmE1BvkP8QLA [launchMode, flags]
