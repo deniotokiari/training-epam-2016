@@ -38,19 +38,32 @@ public class IcButton extends Button {
                 R.styleable.IcButtonStyle, defStyleAttr, 0);
         try {
             final AppCompatDrawableManager drawableManager = AppCompatDrawableManager.get();
-            Drawable rightIcon = a.getDrawableIfKnown(R.styleable.IcButtonStyle_rightIcon);
 
+            Drawable rightIcon = a.getDrawableIfKnown(R.styleable.IcButtonStyle_rightIcon);
             int id = a.getResourceId(R.styleable.IcButtonStyle_rightIcon, -1);
             if (id != -1) {
                 rightIcon = drawableManager.getDrawable(getContext(), id);
             }
+
             Drawable topIcon = a.getDrawableIfKnown(R.styleable.IcButtonStyle_topIcon);
             id = a.getResourceId(R.styleable.IcButtonStyle_topIcon, -1);
             if (id != -1) {
                 topIcon = drawableManager.getDrawable(getContext(), id);
             }
 
-            setCompoundDrawablesWithIntrinsicBounds(null, topIcon, rightIcon, null);
+            Drawable leftIcon = a.getDrawableIfKnown(R.styleable.IcButtonStyle_leftIcon);
+            id = a.getResourceId(R.styleable.IcButtonStyle_leftIcon, -1);
+            if (id != -1) {
+                leftIcon = drawableManager.getDrawable(getContext(), id);
+            }
+
+            Drawable bottomIcon = a.getDrawableIfKnown(R.styleable.IcButtonStyle_bottomIcon);
+            id = a.getResourceId(R.styleable.IcButtonStyle_bottomIcon, -1);
+            if (id != -1) {
+                bottomIcon = drawableManager.getDrawable(getContext(), id);
+            }
+
+            setCompoundDrawablesWithIntrinsicBounds(leftIcon, topIcon, rightIcon, bottomIcon);
         } finally {
             a.recycle();
         }
