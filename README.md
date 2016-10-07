@@ -1,5 +1,13 @@
 IMPORTANT:
 
+HW 10.10.2016
+1. Implement some object.
+2. Write units test for that object
+3. Mock part/Fully behaviour of that object. (mockito)
+4. Write instrumentationTests (expresso, robolectric, robotium  )
+
+=============================================================================
+
 1. On Friday all need to comes at 17:50 to Makei/EPAM Systems door.
 2. All of you should provide access to add commentaries in your repositories for everyone or for teachers[IstiN,alexdzeshko,deniotokiari,ilya-shknaj]
 3. Checklist before commit
