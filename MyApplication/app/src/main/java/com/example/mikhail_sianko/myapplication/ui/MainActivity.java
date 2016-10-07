@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        updateDate();
     }
 
     @Override
@@ -76,7 +77,12 @@ public class MainActivity extends AppCompatActivity {
 //        textView.setText(savedInstanceState.getString(KEY_EDIT));
     }
 
+    public void updateDate() {
+
+    }
+
     public static void start(@NonNull Context context) {
         context.startActivity(new Intent(context, MainActivity.class));
     }
+
 }
