@@ -1,3 +1,24 @@
+IMPORTANT:
+
+1. On Friday all need to comes at 17:50 to Makei/EPAM Systems door.
+2. All of you should provide access to add commentaries in your repositories for everyone or for teachers[IstiN,alexdzeshko,deniotokiari,ilya-shknaj]
+3. Checklist before commit
+
+* [ ] check members name(m* or without m), use s* when static
+* [ ] check accessors (public, private, protected, default, static)
+* [ ] check { } in if, for, etc...
+* [ ] fragment creation need to be with parameters in Bundle, and set like setArguments
+* [ ] check use this.* or do not use this.* when get access to the members
+* [ ] use @Override if extends some method of class or interface 
+* [ ] text_tag - do not use "_" in variable, members, packages
+* [ ] textTag - incorrect package name(do not use UPPERCASE)
+* [ ] hardcoded strings need to be in Resources
+* [ ] check getActivity for NULL if use in fragment except onActivityCreated and onCreateView
+* [ ] check all __________ underlined by Android Studio code
+* [ ] move extras keys to constants
+
+=============================================================================
+
 HW 07.10.2016[deadline for all tasks 07.10.2016]
 
 1. create reusable styles and custom them in prev HW
