@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -17,6 +18,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.SecondActivity"
+            android:launchMode="singleTask"
+            android:label="@string/label_second_activity">
+            <intent-filter>
+                <action android:name="second"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.LayoutsActivity"
+                  android:exported="true"
+                  android:theme="@style/AppTheme"
+            android:label="@string/label_layouts"/>
+
+        <receiver android:name=".data.SomeReceiver">
+            <intent-filter>
+                <action android:name="second"/>
+            </intent-filter>
+
+        </receiver>
     </application>
 
 </manifest>

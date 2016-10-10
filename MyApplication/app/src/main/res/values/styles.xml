@@ -6,6 +6,28 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="buttonStyle">@style/MyCoolButton</item>
+        <item name="buttonMainStyle">@style/MyGreenButton</item>
+        <item name="icButtonStyle">@style/MyYellowButton</item>
+    </style>
+    <style name="AppTheme.Inverse" parent="AppTheme">
+        <item name="buttonStyle">@style/MyGreenButton</item>
+        <item name="buttonMainStyle">@style/MyCoolButton</item>
+    </style>
+
+    <style name="MyCoolButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:textAppearance">@style/TextAppearance.MyCoolText</item>
+    </style>
+    <style name="MyGreenButton" parent="MyCoolButton">
+        <item name="android:background">@color/colorGreen</item>
+    </style>
+    <style name="MyYellowButton" parent="MyCoolButton">
+        <item name="android:background">@color/btn_background</item>
+    </style>
+    <style name="TextAppearance.MyCoolText" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
 
 </resources>

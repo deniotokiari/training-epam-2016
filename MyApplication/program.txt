@@ -1,0 +1,29 @@
+Version control	git, svn - github, bitbucket
+Introduction into Android	Android Developer tools. Emulators. Debug. Structure of android project.
+Обзор основных классов: Activity, Application, Service, Reciever, Fragment
+"Обзор основных View: RelativeLayout, LinearLayout, ScrollView, TabLayout, Form Stuf, Date Picker
+Атрибуты, сразу «Правильная» верстка
+Размещение ресурсов для разных разрешений
+Draw9patch"
+Create backend module with configuration	Create app engine module with simple form that will store configuration file
+Android/Java unit tests / instrumentation tests	Create tests for backend module, create tests for UI module with Robolectric
+Android build tools. Modules. Flavors.
+"Обзор структуры Android проекта:
+manifest, src, Res(drawable, values, xml, anim), Assets, R"
+Ознакомление с support libraries	https://developer.android.com/topic/libraries/support-library/features.html
+Design patterns
+Работа с адаптерами: GridView, ListView, Spinner, RecyclerView, ViewPager
+Уведомления: Dialog, Toast, Notification
+Меню, Настройки
+Хранение данных
+-файлы
+-sqlite	Review existing frameworks, Realm, GreenDAO, OrmLite
+Threading	Thread, ThreadPool, Loader/LoaderManager
+ImageLoader	Example of ImageLoader, compare Picasso, UIL, Fresko, Glide
+ContentProvider:
+Загрузка данных из веб	ContentObserver, ContentProvider - why?
+JSON parsing – на примере Twitter API	Android JSONObject/Gson/Jackson/Moshi
+CursorLoader, CursorAdapter	ContentObserver
+Работа с LocationManager, MapView
+Android Widgets
+Работа с проектами

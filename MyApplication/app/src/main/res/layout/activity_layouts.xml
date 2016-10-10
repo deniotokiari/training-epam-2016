@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.example.mikhail_sianko.myapplication.ui.LayoutsActivity">
+
+    <include layout="@layout/view_bars"/>
+
+    <android.support.percent.PercentFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:id="@+id/home_channel_stream"
+            app:layout_widthPercent="100%"
+            app:layout_aspectRatio="178%"
+            android:background="@android:color/holo_red_dark"
+            android:orientation="vertical"
+            >
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button 1"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button 2"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="?attr/buttonMainStyle"
+                android:text="Button 3"/>
+            <com.example.mikhail_sianko.myapplication.view.IcButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:rightIcon="@drawable/ic_reorder_white_24dp"
+                app:topIcon="@drawable/ic_reorder_white_24dp"
+                android:text="Button 4"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Text"
+            android:layout_gravity="bottom"
+            />
+
+    </android.support.percent.PercentFrameLayout>
+</LinearLayout>

@@ -1,0 +1,12 @@
+<resources>
+
+    <attr name="buttonMainStyle" format="reference" />
+
+    <attr name="icButtonStyle" format="reference"/>
+
+    <declare-styleable name="IcButtonStyle">
+        <attr name="rightIcon" format="reference" />
+        <attr name="topIcon" format="reference" />
+    </declare-styleable>
+
+</resources>
