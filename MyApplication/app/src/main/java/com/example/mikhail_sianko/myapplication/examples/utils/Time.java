@@ -1,4 +1,4 @@
-package com.example.mikhail_sianko.myapplication.utils;
+package com.example.mikhail_sianko.myapplication.examples.utils;
 
 import java.util.Calendar;
 

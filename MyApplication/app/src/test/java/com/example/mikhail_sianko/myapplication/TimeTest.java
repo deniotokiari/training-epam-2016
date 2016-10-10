@@ -1,8 +1,8 @@
 package com.example.mikhail_sianko.myapplication;
 
-import com.example.mikhail_sianko.myapplication.utils.CustomSimpleDayFormat;
-import com.example.mikhail_sianko.myapplication.utils.ITime;
-import com.example.mikhail_sianko.myapplication.utils.Time;
+import com.example.mikhail_sianko.myapplication.examples.utils.CustomSimpleDayFormat;
+import com.example.mikhail_sianko.myapplication.examples.utils.ITime;
+import com.example.mikhail_sianko.myapplication.examples.utils.Time;
 
 import org.junit.After;
 import org.junit.AfterClass;

@@ -18,14 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.SecondActivity"
+        <activity android:name=".examples.SecondActivity"
             android:launchMode="singleTask"
             android:label="@string/label_second_activity">
             <intent-filter>
                 <action android:name="second"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.LayoutsActivity"
+        <activity android:name=".examples.LayoutsActivity"
                   android:exported="true"
                   android:theme="@style/AppTheme"
             android:label="@string/label_layouts"/>

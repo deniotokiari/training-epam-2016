@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context="com.example.mikhail_sianko.myapplication.ui.LayoutsActivity">
+    tools:context="com.example.mikhail_sianko.myapplication.examples.LayoutsActivity">
 
     <include layout="@layout/view_bars"/>
 
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 style="?attr/buttonMainStyle"
                 android:text="Button 3"/>
-            <com.example.mikhail_sianko.myapplication.view.IcButton
+            <com.example.mikhail_sianko.myapplication.examples.view.IcButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:rightIcon="@drawable/ic_reorder_white_24dp"

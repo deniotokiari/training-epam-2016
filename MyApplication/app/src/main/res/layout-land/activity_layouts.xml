@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context="com.example.mikhail_sianko.myapplication.ui.LayoutsActivity">
+    tools:context="com.example.mikhail_sianko.myapplication.examples.LayoutsActivity">
 
     <include layout="@layout/view_bars"/>
 
 
-    <com.example.mikhail_sianko.myapplication.view.OneTimeButton
+    <com.example.mikhail_sianko.myapplication.examples.view.OneTimeButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="One Time Button"

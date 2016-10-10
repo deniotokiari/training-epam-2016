@@ -1,4 +1,4 @@
-package com.example.mikhail_sianko.myapplication.view;
+package com.example.mikhail_sianko.myapplication.examples.view;
 
 import android.annotation.TargetApi;
 import android.content.Context;
