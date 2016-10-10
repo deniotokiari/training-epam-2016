@@ -21,6 +21,12 @@ IMPORTANT:
 
 =============================================================================
 
+HW 12.10.2016
+
+1. Http protocol basics
+2. Java collections (List+Map+Set) + SparseArrays
+3. Create AppEngine module
+
 
 HW 10.10.2016
 1. Implement some object.
