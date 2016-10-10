@@ -7,6 +7,8 @@
     <declare-styleable name="IcButtonStyle">
         <attr name="rightIcon" format="reference" />
         <attr name="topIcon" format="reference" />
+        <attr name="leftIcon" format="reference" />
+        <attr name="bottomIcon" format="reference" />
     </declare-styleable>
 
 </resources>

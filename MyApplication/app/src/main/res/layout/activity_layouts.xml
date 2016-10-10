@@ -40,6 +40,8 @@
                 android:layout_height="wrap_content"
                 app:rightIcon="@drawable/ic_reorder_white_24dp"
                 app:topIcon="@drawable/ic_reorder_white_24dp"
+                app:leftIcon="@drawable/ic_reorder_white_24dp"
+                app:bottomIcon="@drawable/ic_reorder_white_24dp"
                 android:text="Button 4"/>
 
         </LinearLayout>
