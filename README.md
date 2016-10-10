@@ -19,6 +19,15 @@ IMPORTANT:
 * [ ] check all __________ underlined by Android Studio code
 * [ ] move extras keys to constants
 
+<b>Base project requirements:</b>
+
+1. 5+ screens
+2. Multi-threading
+3. Data processing (parse json/xml)
+4. Own implementation of http client, image loader
+5. Data caching (SQLite, files, memory)
+6. Backend
+
 =============================================================================
 
 HW 12.10.2016
@@ -29,6 +38,7 @@ HW 12.10.2016
 
 
 HW 10.10.2016
+
 1. Implement some object.
 2. Write units test for that object
 3. Mock part/fully behaviour of that object. (mockito, robolectric)
@@ -36,9 +46,12 @@ HW 10.10.2016
 5. Implement button which visibility depends of private field in activity. Mock that private object.
 
 visibility conditions
+
+<code>
 if (BuildConfig.DEBUG )  {
     return true;
 }
+</code>
 =============================================================================
 
 
