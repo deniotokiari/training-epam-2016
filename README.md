@@ -1,3 +1,5 @@
+Stats => https://deniotokiari.github.io/training-epam-2016/
+
 IMPORTANT:
 
 1. On Friday all need to comes at 17:50 to Makei/EPAM Systems door.
