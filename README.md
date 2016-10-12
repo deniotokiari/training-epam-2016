@@ -30,12 +30,12 @@ IMPORTANT:
 
 =============================================================================
 HW 17.10.2016
-1. Create 4 flavors (for example 2 variants of enviroments and 2 variants of countries)
-2. rename apk over gradle task
-3. define variables in gradle and use it in Java code
+1. Create 4 flavors (for example 2 variants of enviroments and 2 variants of countries)</br>
+2. rename apk over gradle task </br>
+3. define variables in gradle and use it in Java code </br>
 
 
-=============================================================================
+</hr>
 HW 14.10.2016
 
 1. Create and deploy backend module
