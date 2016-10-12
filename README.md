@@ -29,6 +29,17 @@ IMPORTANT:
 6. Backend
 
 =============================================================================
+HW 17.10.2016
+1. Create 4 flavors (for example 2 variants of enviroments and 2 variants of countries)
+2. rename apk over gradle task
+3. define variables in gradle and use it in Java code
+
+
+=============================================================================
+HW 14.10.2016
+
+1. Create and deploy backend module
+2. Get configuration for your app
 
 HW 12.10.2016
 
