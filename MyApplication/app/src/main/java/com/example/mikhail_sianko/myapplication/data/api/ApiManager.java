@@ -4,6 +4,8 @@ import com.example.mikhail_sianko.myapplication.BuildConfig;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
 import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
+import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.training2016.backend.trainingApi.TrainingApi;
 

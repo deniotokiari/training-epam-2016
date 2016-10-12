@@ -7,6 +7,7 @@ import android.util.Log;
 
 import com.example.mikhail_sianko.myapplication.data.api.ApiManager;
 import com.training2016.backend.trainingApi.TrainingApi;
+import com.training2016.backend.trainingApi.model.DataBean;
 
 import java.io.IOException;
 
@@ -37,7 +38,8 @@ public class MainPresenter implements Contract.Presenter {
 
                 try {
                     TrainingApi.GetStats call = ApiManager.get().trainingsApi().getStats();
-                    String response = call.execute().getData();
+                    DataBean bean = call.execute();
+                    String response = bean.getData();
                     notifyResponse(response);
                 } catch (IOException e) {
                     Log.e(TAG, "run: ", e);

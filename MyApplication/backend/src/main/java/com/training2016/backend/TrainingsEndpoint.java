@@ -38,4 +38,11 @@ public class TrainingsEndpoint {
         return response;
     }
 
+    @ApiMethod(name = "getSmth", path = "")
+    public Bean getSmth(Bean bean) {
+        Bean response = new Bean();
+
+        return response;
+    }
+
 }

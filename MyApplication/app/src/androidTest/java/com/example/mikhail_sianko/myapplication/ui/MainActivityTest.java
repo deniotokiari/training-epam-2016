@@ -41,13 +41,13 @@ public class MainActivityTest {
 
     @Test
     public void mainActivityTest() {
-        ViewInteraction appCompatEditText = onView(
-                allOf(withId(R.id.edit_text), isDisplayed()));
-        appCompatEditText.perform(replaceText("hello"), closeSoftKeyboard());
-
-        ViewInteraction appCompatButton = onView(
-                allOf(withText("start layouts"), isDisplayed()));
-        appCompatButton.perform(click());
+//        ViewInteraction appCompatEditText = onView(
+//                allOf(withId(R.id.edit_text), isDisplayed()));
+//        appCompatEditText.perform(replaceText("hello"), closeSoftKeyboard());
+//
+//        ViewInteraction appCompatButton = onView(
+//                allOf(withText("start layouts"), isDisplayed()));
+//        appCompatButton.perform(click());
 
         ViewInteraction button = onView(
                 allOf(childAtPosition(
@@ -95,15 +95,15 @@ public class MainActivityTest {
 
         pressBack();
 
-        ViewInteraction editText = onView(
-                allOf(withId(R.id.edit_text), withText("hello"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                1),
-                        isDisplayed()));
-        editText.check(matches(withText("hello")));
+//        ViewInteraction editText = onView(
+//                allOf(withId(R.id.edit_text), withText("hello"),
+//                        childAtPosition(
+//                                childAtPosition(
+//                                        withId(android.R.id.content),
+//                                        0),
+//                                1),
+//                        isDisplayed()));
+//        editText.check(matches(withText("hello")));
 
     }
 
