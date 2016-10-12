@@ -5,6 +5,9 @@ android {
     buildToolsVersion "23.0.3"
     publishNonDefault true
 
+    def backendUrl = '"http://vk.com"'
+    def backendUrlPreprod = '"http://beta.vk.com"'
+
     defaultConfig {
         applicationId "com.example.mikhail_sianko.myapplication"
         minSdkVersion 15
@@ -14,9 +17,39 @@ android {
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    flavorDimensions "env", "country"
+
+    productFlavors {
+        beta {
+            dimension "env"
+            buildConfigField "String", "BACKEND_URL", backendUrlPreprod
+        }
+
+        production {
+            dimension "env"
+            buildConfigField "String", "BACKEND_URL", backendUrl
+        }
+
+        usa {
+            applicationId "com.example.mikhail_sianko.myapplication.usa"
+            dimension "country"
+        }
+
+        europe {
+            applicationId "com.example.mikhail_sianko.myapplication.europe"
+            dimension "country"
+        }
+    }
+
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -25,13 +58,15 @@ android {
 dependencies {
     compile project(path: ':backend', configuration: 'android-endpoints')
     compile project(':util-lib')
+    compile project(':traininglibrary')
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.google.code.findbugs:jsr305:2.0.1'
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile "com.android.support:appcompat-v7:$supportLibraryVersion"
     compile 'com.android.support:design:24.2.1'
     compile 'com.android.support:percent:24.2.1'
+    //releseCompile '';
+//    compile files('libs/something_local.jar')
 
     testCompile 'junit:junit:4.12'
     testCompile "org.mockito:mockito-core:1.10.19"

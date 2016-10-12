@@ -1,1 +1,1 @@
-include ':app', ':backend', ':util-lib'
+include ':app', ':backend', ':util-lib', ':traininglibrary'
