@@ -27,6 +27,7 @@ IMPORTANT:
 4. Own implementation of http client, image loader
 5. Data caching (SQLite, files, memory)
 6. Backend
+
 Note: Readme in yours repository should contain clear project's description.
 
 =============================================================================
@@ -65,6 +66,7 @@ if (BuildConfig.DEBUG )  {
     return true;
 }
 </code>
+
 =============================================================================
 
 
