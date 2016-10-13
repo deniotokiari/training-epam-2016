@@ -27,12 +27,13 @@ IMPORTANT:
 4. Own implementation of http client, image loader
 5. Data caching (SQLite, files, memory)
 6. Backend
+Note: Readme in yours repository should contain clear project's description.
 
 =============================================================================
 HW 17.10.2016
 
 1. Create 4 flavors (for example 2 variants of enviroments and 2 variants of countries)
-2. rename apk over gradle task to app_name+flover+version (example trainingAplicationProductionRelease_1.0.0.apk)
+2. rename apk over gradle task to app_name+flavor+version (example trainingAplicationProductionRelease_1.0.0.apk)
 3. define variables in gradle and use it in Java code
 
 
