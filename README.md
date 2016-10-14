@@ -8,6 +8,8 @@ KISS => https://ru.wikipedia.org/wiki/KISS_(%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8
 
 YAGNI => https://ru.wikipedia.org/wiki/YAGNI
 
+DRY => https://ru.wikipedia.org/wiki/Don%E2%80%99t_repeat_yourself
+
 Singleton, **Adapter**, Builder, Fabric, State, Strategy, **VeiewHolder**
 
 IMPORTANT:
