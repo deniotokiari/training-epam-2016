@@ -31,6 +31,13 @@ IMPORTANT:
 Note: Readme in yours repository should contain clear project's description.
 
 =============================================================================
+Patterns => http://citforum.ru/SE/project/pattern/
+SOLID => https://ru.wikipedia.org/wiki/SOLID
+KISS => https://ru.wikipedia.org/wiki/KISS
+YAGNI => https://ru.wikipedia.org/wiki/YAGNI
+
+Singleton, *Adapter*, Builder, Fabric, State, Strategy, *VeiewHolder*
+
 HW 17.10.2016
 
 1. Create 4 flavors (for example 2 variants of enviroments and 2 variants of countries)
