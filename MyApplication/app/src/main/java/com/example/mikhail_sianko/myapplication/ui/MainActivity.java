@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.mikhail_sianko.myapplication.HttpClient;
 import com.example.mikhail_sianko.myapplication.R;
 
 public class MainActivity extends AppCompatActivity implements Contract.View {
