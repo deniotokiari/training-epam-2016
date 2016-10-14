@@ -4,7 +4,7 @@ Patterns => http://citforum.ru/SE/project/pattern/
 
 SOLID => https://ru.wikipedia.org/wiki/SOLID
 
-KISS => https://ru.wikipedia.org/wiki/KISS
+KISS => https://ru.wikipedia.org/wiki/KISS_(%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF)
 
 YAGNI => https://ru.wikipedia.org/wiki/YAGNI
 
