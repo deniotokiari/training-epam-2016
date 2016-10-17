@@ -2,6 +2,7 @@ package com.example.mikhail_sianko.myapplication;
 
 import android.app.Application;
 import android.net.http.HttpResponseCache;
+import android.os.AsyncTask;
 
 import com.example.mikhail_sianko.myapplication.utils.ContextGodObject;
 import com.example.mikhail_sianko.myapplication.utils.ContextHolder;
@@ -19,6 +20,14 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        AsyncTask.SERIAL_EXECUTOR.execute(new Runnable() {
+
+            @Override
+            public void run() {
+                //init libraries
+            }
+        });
 
         ContextHolder.set(this);
         ContextGodObject.getInstance().setContext(this);

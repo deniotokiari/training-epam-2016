@@ -32,16 +32,6 @@ public class SecondActivity extends AppCompatActivity {
                 .setSize(0)
                 .build();
 
-        new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                IHttpClient client = HttpClientFactory.getDefault();
-
-                InputStream inputStream = client.get();
-            }
-        }).start();
-
         final List<House> houses = new ArrayList<>();
         houses.add(house);
 

@@ -10,5 +10,6 @@ public interface Contract {
 
     interface Presenter {
         void onReady();
+
     }
 }
