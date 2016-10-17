@@ -44,6 +44,15 @@ Note: Readme in yours repository should contain clear project's description.
 
 =============================================================================
 
+HW 19.10.2016
+
+1. Write own AsyncTask that will have the same API as android.AsyncTask, but will support screen rotation.
+    If we already downloaded data, we just need to reuse it, if activity was destroyed we need to destoy cache data.
+    
+2*. Start implementation of own ImageLoader.
+    
+
+
 HW 17.10.2016
 
 1. Create 4 flavors (for example 2 variants of enviroments and 2 variants of countries)
