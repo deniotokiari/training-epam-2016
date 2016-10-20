@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
                 Map<String, String> headers = new ConcurrentHashMap<String, String>();
                 headers.put("User-Agent", "My Twitter App v1.0.23");
                 String authorizationSecret = TwitterConstants.CONSUMER_KEY + ":" + TwitterConstants.CONSUMER_SECRET;
-                headers.put("Authorization", "Basic " + Base64.encodeToString(authorizationSecret.getBytes(), Base64.DEFAULT));
+                headers.put("Authorization", "Basic " + Base64.encodeToString(authorizationSecret.getBytes(), Base64.NO_WRAP));
                 headers.put("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
 
                 httpPostOperation.setBody("grant_type=client_credentials");
