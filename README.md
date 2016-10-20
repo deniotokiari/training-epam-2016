@@ -44,6 +44,18 @@ Note: Readme in yours repository should contain clear project's description.
 
 =============================================================================
 
+HW 21.10.2016
+
+1. Load and parse json over org.json.JSONObject
+2. Load and parse json over GSON library
+3. Convert some field to another format. For instance 'Wed Oct 19 13:31:38 +0000 2016' to 'Yesterday 13:31'
+
+For parsing you can use any response from your final project backend.
+If backend return data only in xml format, you can parse xml, but without any external libraries.
+
+PS. Parsing should work in background thread. In sample, which i demonstrate you yesterday, we did that in UI thread. 
+
+
 HW 19.10.2016
 
 1. Write own AsyncTask that will have the same API as android.AsyncTask, but will support screen rotation.
