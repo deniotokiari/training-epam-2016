@@ -13,7 +13,7 @@ public class HttpClientFactory {
     @Nullable
     public static IHttpClient get(final Type pType) {
         if (pType == Type.HTTP_PURE) {
-            return new HttpClient();
+            return new HttpClientAbstraction();
         } else if (pType == Type.OK_HTTP) {
             return new OkHttpClient();
         } else {

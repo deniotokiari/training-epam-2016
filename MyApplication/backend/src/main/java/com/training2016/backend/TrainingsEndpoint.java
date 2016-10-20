@@ -33,7 +33,12 @@ public class TrainingsEndpoint {
     @ApiMethod(name = "getStats")
     public DataBean getStats() {
         DataBean response = new DataBean();
-        String data = new HttpClient().get(STATS_URL);
+        String data = null;
+        try {
+            data = new HttpClient().get(STATS_URL);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         response.setData(data);
         return response;
     }

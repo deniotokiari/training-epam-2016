@@ -2,11 +2,11 @@ package com.example.mikhail_sianko.myapplication.http;
 
 import java.io.InputStream;
 
-public class HttpClient implements IHttpClient {
+public class HttpClientAbstraction implements IHttpClient {
 
     public static final String HTTP_CLIENT = "HTTP_CLIENT";
 
-    public HttpClient() {
+    public HttpClientAbstraction() {
 
     }
 

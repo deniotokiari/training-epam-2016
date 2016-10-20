@@ -7,6 +7,7 @@ import android.support.v4.content.AsyncTaskLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -15,15 +16,30 @@ import android.widget.Toast;
 
 import com.example.mikhail_sianko.myapplication.BuildConfig;
 import com.example.mikhail_sianko.myapplication.R;
+import com.example.mikhail_sianko.myapplication.constants.TwitterConstants;
+import com.example.mikhail_sianko.myapplication.gson.DateConverter;
+import com.example.mikhail_sianko.myapplication.model.HttpRequestModel;
+import com.example.mikhail_sianko.myapplication.model.TwitterSearchResponse;
+import com.example.mikhail_sianko.myapplication.model.gson.TwitterSearchGSONResponse;
 import com.example.mikhail_sianko.myapplication.threads.OnResultCallback;
 import com.example.mikhail_sianko.myapplication.threads.ProgressCallback;
 import com.example.mikhail_sianko.myapplication.threads.ThreadManager;
 import com.example.mikhail_sianko.myapplication.threads.operation.DBOperation;
+import com.example.mikhail_sianko.myapplication.threads.operation.HttpGetRequest;
+import com.example.mikhail_sianko.myapplication.threads.operation.HttpPostOperation;
 import com.example.mikhail_sianko.myapplication.threads.operation.WorkerOperation;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class MainActivity extends AppCompatActivity implements Contract.View {
 
@@ -32,6 +48,11 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
 
     private TextView responseView;
     private ProgressBar progressBar;
+
+    private String mAccessToken;
+
+    //TODO should be singleton
+    private ThreadManager threadManager = new ThreadManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +63,111 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
         responseView = (TextView) findViewById(R.id.responseView);
         progressBar = ((ProgressBar) findViewById(R.id.progressIndicator));
 
-        ThreadManager threadManager = new ThreadManager();
+        View btnLogin = findViewById(R.id.btn_login);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                HttpRequestModel httpPostOperation = new HttpRequestModel();
+
+                httpPostOperation.setUrl("https://api.twitter.com/oauth2/token");
+
+                Map<String, String> headers = new ConcurrentHashMap<String, String>();
+                headers.put("User-Agent", "My Twitter App v1.0.23");
+                String authorizationSecret = TwitterConstants.CONSUMER_KEY + ":" + TwitterConstants.CONSUMER_SECRET;
+                headers.put("Authorization", "Basic " + Base64.encodeToString(authorizationSecret.getBytes(), Base64.DEFAULT));
+                headers.put("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
+
+                httpPostOperation.setBody("grant_type=client_credentials");
+
+                httpPostOperation.setHeaders(headers);
+                threadManager.execute(new HttpPostOperation(), httpPostOperation, new OnResultCallback<String, Void>() {
+                    @Override
+                    public void onSuccess(String pResponse) {
+                        Log.d(TAG, "onSuccess = " + pResponse);
+                        try {
+                            JSONObject jsonObject = new JSONObject(pResponse);
+                            mAccessToken = jsonObject.getString("access_token");
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onError(Exception e) {
+                        Log.e(TAG, "onError message=" + e.getMessage(), e);
+                    }
+
+                    @Override
+                    public void onProgressChanged(Void aVoid) {
+
+                    }
+                });
+            }
+        });
+
+        btnLogin.callOnClick();
+
+        findViewById(R.id.btn_search).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                HttpRequestModel httpGetOperation = new HttpRequestModel();
+                httpGetOperation.setUrl("https://api.twitter.com/1.1/search/tweets.json?q=%23freebandnames");
+
+                Map<String, String> headers = new ConcurrentHashMap<String, String>();
+                headers.put("Authorization", "Bearer "+ mAccessToken);
+
+                httpGetOperation.setHeaders(headers);
+
+                threadManager.execute(new HttpGetRequest(), httpGetOperation, new OnResultCallback<String, Void>() {
+
+
+                    @Override
+                    public void onSuccess(String s) {
+                        Log.d(TAG, "search success=" + s);
+
+                        parseJsonOverJSONObject(s);
+
+                        parseJsonOverGson(s);
+
+                    }
+
+                    @Override
+                    public void onError(Exception e) {
+                        Log.d(TAG, "search error", e);
+                    }
+
+                    @Override
+                    public void onProgressChanged(Void aVoid) {
+
+                    }
+                });
+            }
+        });
+
+
+
+    }
+
+    private void parseJsonOverJSONObject(String response) {
+        try {
+            TwitterSearchResponse statuses = new TwitterSearchResponse(response);
+            statuses.getTwitterSearchStatuses();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void parseJsonOverGson(String response) {
+        Gson gson =  new GsonBuilder().registerTypeAdapter(Date.class, new DateConverter()).create();
+
+        TwitterSearchGSONResponse twitterSearchResponse = gson.fromJson(response, TwitterSearchGSONResponse.class);
+        twitterSearchResponse.getStatuses();
+
+    }
+
+    private void doThreadStuff() {
         threadManager.execute(new DBOperation(), 2, new OnResultCallback<String, Integer>() {
 
             @Override
