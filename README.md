@@ -44,6 +44,11 @@ Note: Readme in yours repository should contain clear project's description.
 
 =============================================================================
 
+
+HW 24.10.2016
+
+1. Implement swipe-to-dissmiss or drag-n-drop in recycler view.
+
 HW 21.10.2016
 
 1. Load and parse json over org.json.JSONObject
@@ -54,7 +59,6 @@ For parsing you can use any response from your final project backend.
 If backend return data only in xml format, you can parse xml, but without any external libraries.
 
 PS. Parsing should work in background thread. In sample, which i demonstrate you yesterday, we did that in UI thread. 
-
 
 HW 19.10.2016
 
