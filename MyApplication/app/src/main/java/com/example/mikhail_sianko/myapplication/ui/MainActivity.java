@@ -40,6 +40,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity implements Contract.View {
 
@@ -52,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
     private String mAccessToken;
 
     //TODO should be singleton
-    private ThreadManager threadManager = new ThreadManager();
+    private ThreadManager threadManager = new ThreadManager(Executors.newFixedThreadPool(ThreadManager.COUNT_CORE));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

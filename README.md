@@ -23,7 +23,7 @@ IMPORTANT:
 * [ ] check { } in if, for, etc...
 * [ ] fragment creation need to be with parameters in Bundle, and set like setArguments
 * [ ] check use this.* or do not use this.* when get access to the members
-* [ ] use @Override if extends some method of class or interface 
+* [ ] use @Override if extends some method of class or interface
 * [ ] text_tag - do not use "_" in variable, members, packages
 * [ ] textTag - incorrect package name(do not use UPPERCASE)
 * [ ] hardcoded strings need to be in Resources
@@ -44,6 +44,13 @@ Note: Readme in yours repository should contain clear project's description.
 
 =============================================================================
 
+HW 26.10.2016
+
+1. Resolve TODO's in Malevich in scope of your ImageLoader
+2.* universal loader that will download whatever and ImageLoader will be example of that
+Examples: Glide, Picasso, UniversalImageLoader, Fresko and etc.
+
+
 
 HW 24.10.2016
 
@@ -58,15 +65,15 @@ HW 21.10.2016
 For parsing you can use any response from your final project backend.
 If backend return data only in xml format, you can parse xml, but without any external libraries.
 
-PS. Parsing should work in background thread. In sample, which i demonstrate you yesterday, we did that in UI thread. 
+PS. Parsing should work in background thread. In sample, which i demonstrate you yesterday, we did that in UI thread.
 
 HW 19.10.2016
 
 1. Write own AsyncTask that will have the same API as android.AsyncTask, but will support screen rotation.
     If we already downloaded data, we just need to reuse it, if activity was destroyed we need to destoy cache data.
-    
+
 2*. Start implementation of own ImageLoader.
-    
+
 
 
 HW 17.10.2016
@@ -112,11 +119,11 @@ HW 07.10.2016[deadline for all tasks 07.10.2016]
 
 1. create reusable styles and custom them in prev HW
 2. create custom attributes for different buttons
-3. add screenshots of prev HW to readme.md as images[you can upload everything to git] 
+3. add screenshots of prev HW to readme.md as images[you can upload everything to git]
 4. Add left/bottom icon support for IcButton class.
 5. Draw9Patch, create splash screen with bg_splash.9.png
 
-Links: 
+Links:
 Checklist - https://github.com/IstiN/android_training_2014
 Diagrams - http://www.planttext.com/planttext
 Draw9patch - https://habrahabr.ru/post/113623/
@@ -164,7 +171,7 @@ HW 26.09.2016
 
 1. Create project (github || bitbucket), soursetree
 2. Push Android Project to master in repo (.gitignore)
-3. Create 'feature_1', 'feature_n' branches 
+3. Create 'feature_1', 'feature_n' branches
 4. Push all branches to remote
 5. Emulate conflict in a few files
 6. Merge conflict to master

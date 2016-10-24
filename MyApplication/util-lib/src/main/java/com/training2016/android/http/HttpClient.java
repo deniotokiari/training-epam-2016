@@ -1,14 +1,15 @@
 package com.training2016.android.http;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Map;
 
+import javax.net.ssl.HttpsURLConnection;
 
 public class HttpClient {
 
@@ -70,6 +71,31 @@ public class HttpClient {
             }
         }
         return response;
+    }
+
+    public interface ResultConverter<Result> {
+
+        Result convert(InputStream inputStream);
+
+    }
+
+    public <Result> Result getResult(String url, ResultConverter<Result> resultConverter) throws IOException {
+        HttpURLConnection connection = null;
+        InputStream inputStream = null;
+        try {
+            URL reqUrl = new URL(url);
+            connection = ((HttpURLConnection) reqUrl.openConnection());
+            connection.setRequestMethod("GET");
+            inputStream = connection.getInputStream();
+            return resultConverter.convert(inputStream);
+        } finally {
+            if (inputStream != null) {
+                inputStream.close();
+            }
+            if (connection != null) {
+                connection.disconnect();
+            }
+        }
     }
 
     private void applyBody(HttpURLConnection httpURLConnection, String body) throws Exception {

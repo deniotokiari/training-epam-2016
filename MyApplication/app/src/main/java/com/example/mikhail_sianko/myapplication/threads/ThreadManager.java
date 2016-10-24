@@ -11,7 +11,11 @@ public class ThreadManager {
     private final ExecutorService executorService;
 
     public ThreadManager() {
-        this.executorService = Executors.newFixedThreadPool(COUNT_CORE);
+        this(Executors.newFixedThreadPool(3));
+    }
+
+    public ThreadManager(final ExecutorService executorService) {
+        this.executorService = executorService;
     }
 
     public<Params, Progress, Result> void execute(final Operation<Params, Progress, Result> operation, final Params param, final OnResultCallback<Result, Progress> onResultCallback) {

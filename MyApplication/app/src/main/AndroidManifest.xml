@@ -27,6 +27,10 @@
                 <action android:name="second"/>
             </intent-filter>
         </activity>
+        <activity android:name=".ui.ImagesActivity"
+                  android:exported="true"
+            android:label="@string/label_images_activity">
+        </activity>
         <activity android:name=".examples.LayoutsActivity"
                   android:exported="true"
                   android:theme="@style/AppTheme"
