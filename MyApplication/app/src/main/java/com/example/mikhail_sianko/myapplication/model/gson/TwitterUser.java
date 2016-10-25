@@ -1,7 +1,5 @@
 package com.example.mikhail_sianko.myapplication.model.gson;
 
-import com.google.gson.annotations.SerializedName;
-
 public class TwitterUser {
 
 //    @SerializedName("name")
@@ -9,5 +7,9 @@ public class TwitterUser {
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

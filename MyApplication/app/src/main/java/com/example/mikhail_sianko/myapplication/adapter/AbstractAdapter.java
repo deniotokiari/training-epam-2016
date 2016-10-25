@@ -30,7 +30,11 @@ public abstract class AbstractAdapter<Item> extends RecyclerView.Adapter<Abstrac
         }
 
         public <T> T get(final int id) {
-            return (T) mViewSparseArray.get(id);
+            View view = mViewSparseArray.get(id);
+            if (view == null) {
+                view = itemView.findViewById(id);
+            }
+            return (T) view;
         }
 
     }
