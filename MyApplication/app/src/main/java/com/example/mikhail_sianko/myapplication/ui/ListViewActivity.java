@@ -1,5 +1,6 @@
 package com.example.mikhail_sianko.myapplication.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -33,6 +34,7 @@ public class ListViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_view_activity);
 
+        startActivity(new Intent(this, ImagesActivity.class));
         findViewById(R.id.listContainer).setVisibility(View.GONE);
         findViewById(R.id.recyclerContainer).setVisibility(View.VISIBLE);
 

@@ -47,7 +47,13 @@ public class ImagesActivity extends AppCompatActivity {
             public View getView(final int position, final View convertView, final ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
                 ImageView imageView = (ImageView) view.findViewById(R.id.image);
-                malevich.drawBitmap(imageView, IMAGE_URLS[position]);
+                String imageUrl = IMAGE_URLS[position];
+//                Picasso picasso = Picasso.with(imageView.getContext());
+//                picasso.setIndicatorsEnabled(true);
+//                picasso.load(imageUrl).error(R.color.colorAccent).fit().into(imageView);
+
+//                ImageLoader.getInstance().displayImage(imageUrl, imageView);
+                malevich.drawBitmap(imageView, imageUrl);
                 return view;
             }
         });

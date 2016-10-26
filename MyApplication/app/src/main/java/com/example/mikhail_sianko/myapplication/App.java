@@ -6,6 +6,8 @@ import android.os.AsyncTask;
 import com.example.mikhail_sianko.myapplication.malevich.Malevich;
 import com.example.mikhail_sianko.myapplication.utils.ContextGodObject;
 import com.example.mikhail_sianko.myapplication.utils.ContextHolder;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 /**
  * Created by Alex Dzeshko on 30-Sep-16.
@@ -36,10 +38,10 @@ public class App extends Application {
 
         ContextHolder.set(this);
         ContextGodObject.getInstance().setContext(this);
+
+        ImageLoaderConfiguration config = ImageLoaderConfiguration.createDefault(this);
+
+        ImageLoader.getInstance().init(config);
     }
 
-    @Override
-    public void unregisterActivityLifecycleCallbacks(ActivityLifecycleCallbacks callback) {
-        super.unregisterActivityLifecycleCallbacks(callback);
-    }
 }
