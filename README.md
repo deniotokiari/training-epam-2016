@@ -44,6 +44,11 @@ Note: Readme in yours repository should contain clear project's description.
 
 =============================================================================
 
+HW 28.10.16
+
+https://github.com/nostra13/Android-Universal-Image-Loader/wiki/Task-flow
+Resolve todos in imageloader (file cache, lifo queue, check if loading started)
+
 HW 26.10.2016
 
 1. Resolve TODO's in Malevich in scope of your ImageLoader
