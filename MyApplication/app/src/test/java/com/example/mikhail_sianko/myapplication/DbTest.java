@@ -1,9 +1,6 @@
 package com.example.mikhail_sianko.myapplication;
 
-import android.app.Application;
-
 import com.example.mikhail_sianko.myapplication.db.DbHelper;
-import com.example.mikhail_sianko.myapplication.db.IDbOperations;
 import com.example.mikhail_sianko.myapplication.model.contract.User;
 
 import org.junit.Assert;

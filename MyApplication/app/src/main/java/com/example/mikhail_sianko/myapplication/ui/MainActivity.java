@@ -66,28 +66,6 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
         presenter = new MainPresenter(this);
         setContentView(R.layout.activity_main);
 
-        new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                final ContentValues values = new ContentValues();
-
-                values.put(User.ID, 1);
-                values.put(User.TITLE, "User");
-                values.put(User.DATE, System.currentTimeMillis());
-
-                final IDbOperations operations = new DbHelper(MainActivity.this, "test.db", 1);
-
-                final long id = operations.insert(User.class, values);
-
-                final Cursor cursor = operations.query("SELECT * FROM " + DbHelper.getTableName(User.class));
-
-                cursor.close();
-
-                operations.delete(User.class, "WHERE " + User.ID + " = ?", String.valueOf(id));
-            }
-        }).start();
-
         responseView = (TextView) findViewById(R.id.responseView);
         progressBar = ((ProgressBar) findViewById(R.id.progressIndicator));
 

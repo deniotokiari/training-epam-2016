@@ -12,17 +12,10 @@ import com.example.mikhail_sianko.myapplication.ui.MainActivity;
 
 public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActivity> {
 
+    private IDbOperations mOperations;
+
     public MainActivityTest() {
         super(MainActivity.class);
-    }
-
-    private Context mContext;
-
-    @Override
-    protected void setUp() throws Exception {
-        mContext = getActivity();
-
-        super.setUp();
     }
 
     public void testCRUD() {
@@ -32,13 +25,11 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
         values.put(User.TITLE, "User");
         values.put(User.DATE, System.currentTimeMillis());
 
-        final IDbOperations operations = new DbHelper(mContext, "test.db", 1);
+        final long id = mOperations.insert(User.class, values);
 
-        final long id = operations.insert(User.class, values);
+        assertTrue(id != 0);
 
-        assertTrue(id > 0);
-
-        final Cursor cursor = operations.query("SELECT * FROM " + DbHelper.getTableName(User.class));
+        final Cursor cursor = mOperations.query("SELECT * FROM " + DbHelper.getTableName(User.class));
 
         assertNotNull(cursor);
         assertTrue(cursor.moveToFirst());
@@ -49,7 +40,20 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 
         assertTrue(cursor.isClosed());
 
-        operations.delete(User.class, "WHERE " + User.ID + " = ?", String.valueOf(id));
+        final int count = mOperations.delete(User.class, User.ID + " = ?", String.valueOf(id));
+
+        assertEquals(count, 1);
+    }
+
+    @Override
+    protected void setUp() throws Exception {
+        final Context context = getActivity();
+
+        context.deleteDatabase("test");
+
+        mOperations = IDbOperations.Imp.newInstance(context, "test", 1);
+
+        super.setUp();
     }
 
 }
