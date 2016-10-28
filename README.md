@@ -10,6 +10,10 @@ YAGNI => https://ru.wikipedia.org/wiki/YAGNI
 
 DRY => https://ru.wikipedia.org/wiki/Don%E2%80%99t_repeat_yourself
 
+ACID
+
+CRUD
+
 Singleton, **Adapter**, Builder, Fabric, State, Strategy, **VeiewHolder**
 
 IMPORTANT:
@@ -43,6 +47,11 @@ IMPORTANT:
 Note: Readme in yours repository should contain clear project's description.
 
 =============================================================================
+
+HW 31.10.2016
+
+Implement your own DBHelper and write tests for CRUD operations
+* Fix tests and create pull request with fix
 
 HW 28.10.16
 
