@@ -1,5 +1,7 @@
 package com.example.mikhail_sianko.myapplication.ui;
 
+import android.content.ContentValues;
+import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
@@ -17,9 +19,12 @@ import android.widget.Toast;
 import com.example.mikhail_sianko.myapplication.BuildConfig;
 import com.example.mikhail_sianko.myapplication.R;
 import com.example.mikhail_sianko.myapplication.constants.TwitterConstants;
+import com.example.mikhail_sianko.myapplication.db.DbHelper;
+import com.example.mikhail_sianko.myapplication.db.IDbOperations;
 import com.example.mikhail_sianko.myapplication.gson.DateConverter;
 import com.example.mikhail_sianko.myapplication.model.HttpRequestModel;
 import com.example.mikhail_sianko.myapplication.model.TwitterSearchResponse;
+import com.example.mikhail_sianko.myapplication.model.contract.User;
 import com.example.mikhail_sianko.myapplication.model.gson.TwitterSearchGSONResponse;
 import com.example.mikhail_sianko.myapplication.threads.OnResultCallback;
 import com.example.mikhail_sianko.myapplication.threads.ProgressCallback;
@@ -60,6 +65,28 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
         super.onCreate(savedInstanceState);
         presenter = new MainPresenter(this);
         setContentView(R.layout.activity_main);
+
+        new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                final ContentValues values = new ContentValues();
+
+                values.put(User.ID, 1);
+                values.put(User.TITLE, "User");
+                values.put(User.DATE, System.currentTimeMillis());
+
+                final IDbOperations operations = new DbHelper(MainActivity.this, "test.db", 1);
+
+                final long id = operations.insert(User.class, values);
+
+                final Cursor cursor = operations.query("SELECT * FROM " + DbHelper.getTableName(User.class));
+
+                cursor.close();
+
+                operations.delete(User.class, "WHERE " + User.ID + " = ?", String.valueOf(id));
+            }
+        }).start();
 
         responseView = (TextView) findViewById(R.id.responseView);
         progressBar = ((ProgressBar) findViewById(R.id.progressIndicator));
