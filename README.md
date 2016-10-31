@@ -14,6 +14,8 @@ ACID
 
 CRUD
 
+DB => https://habrahabr.ru/post/281226/
+
 Singleton, **Adapter**, Builder, Fabric, State, Strategy, **VeiewHolder**
 
 IMPORTANT:
