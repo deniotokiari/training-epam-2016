@@ -2,6 +2,7 @@ package com.example.mikhail_sianko.myapplication.ui;
 
 import android.content.ContentValues;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
@@ -26,6 +27,7 @@ import com.example.mikhail_sianko.myapplication.model.HttpRequestModel;
 import com.example.mikhail_sianko.myapplication.model.TwitterSearchResponse;
 import com.example.mikhail_sianko.myapplication.model.contract.User;
 import com.example.mikhail_sianko.myapplication.model.gson.TwitterSearchGSONResponse;
+import com.example.mikhail_sianko.myapplication.provider.CustomContentProvider;
 import com.example.mikhail_sianko.myapplication.threads.OnResultCallback;
 import com.example.mikhail_sianko.myapplication.threads.ProgressCallback;
 import com.example.mikhail_sianko.myapplication.threads.ThreadManager;
@@ -65,6 +67,16 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
         super.onCreate(savedInstanceState);
         presenter = new MainPresenter(this);
         setContentView(R.layout.activity_main);
+
+        final ContentValues contentValues = new ContentValues();
+        contentValues.put(User.TITLE, "Title");
+        contentValues.put(User.ID, contentValues.hashCode());
+        contentValues.put(User.DATE, System.currentTimeMillis());
+
+        getContentResolver().insert(
+                Uri.parse(CustomContentProvider.AUTH),
+                contentValues
+        );
 
         responseView = (TextView) findViewById(R.id.responseView);
         progressBar = ((ProgressBar) findViewById(R.id.progressIndicator));

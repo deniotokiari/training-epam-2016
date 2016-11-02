@@ -3,6 +3,8 @@
     package="com.example.mikhail_sianko.myapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:name=".App"
@@ -42,6 +44,9 @@
             </intent-filter>
 
         </receiver>
+
+        <provider android:authorities="com.example.mikhail_sianko.myapplication.provider.CustomContentProvider"
+                  android:name=".provider.CustomContentProvider" android:exported="false" />
     </application>
 
 </manifest>
