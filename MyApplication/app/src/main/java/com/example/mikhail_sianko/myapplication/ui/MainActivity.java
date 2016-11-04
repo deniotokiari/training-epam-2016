@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.AsyncTaskLoader;
+import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -21,7 +22,6 @@ import com.example.mikhail_sianko.myapplication.BuildConfig;
 import com.example.mikhail_sianko.myapplication.R;
 import com.example.mikhail_sianko.myapplication.constants.TwitterConstants;
 import com.example.mikhail_sianko.myapplication.db.DbHelper;
-import com.example.mikhail_sianko.myapplication.db.IDbOperations;
 import com.example.mikhail_sianko.myapplication.gson.DateConverter;
 import com.example.mikhail_sianko.myapplication.model.HttpRequestModel;
 import com.example.mikhail_sianko.myapplication.model.TwitterSearchResponse;
@@ -52,6 +52,8 @@ import java.util.concurrent.Executors;
 public class MainActivity extends AppCompatActivity implements Contract.View {
 
     private static final String TAG = MainActivity.class.getSimpleName();
+    public static final int ASYNC_LOADER_ID = 0;
+    public static final int CURSOR_LOADER_ID = 1;
     private Contract.Presenter presenter;
 
     private TextView responseView;
@@ -77,6 +79,36 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
                 Uri.parse(CustomContentProvider.AUTH),
                 contentValues
         );
+
+        getSupportLoaderManager().restartLoader(CURSOR_LOADER_ID, null, new LoaderManager.LoaderCallbacks<Cursor>() {
+            @Override
+            public Loader<Cursor> onCreateLoader(int id, Bundle args) {
+                Log.d(TAG, "onCreateLoader: "+id);
+                Uri uri = Uri.parse(CustomContentProvider.AUTH + "/" + DbHelper.getTableName(User.class));
+                Log.d(TAG, "onCreateLoader: "+uri);
+                return new CursorLoader(MainActivity.this, uri, null, null, null, null);
+            }
+
+            @Override
+            public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
+
+                if (data != null && data.moveToFirst()) {
+                    do {
+                        Log.d(TAG, "line : "+data.getInt(data.getColumnIndex(User.ID))+ " " + data.getString(data.getColumnIndex(User.TITLE)));
+                    } while (data.moveToNext());
+                } else {
+                    Log.d(TAG, "onLoadFinished: cursor is empty");
+                }
+            }
+
+            @Override
+            public void onLoaderReset(Loader<Cursor> loader) {
+
+            }
+        });
+
+
+        //region hide
 
         responseView = (TextView) findViewById(R.id.responseView);
         progressBar = ((ProgressBar) findViewById(R.id.progressIndicator));
@@ -134,7 +166,7 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
                 httpGetOperation.setUrl("https://api.twitter.com/1.1/search/tweets.json?q=%23freebandnames");
 
                 Map<String, String> headers = new ConcurrentHashMap<String, String>();
-                headers.put("Authorization", "Bearer "+ mAccessToken);
+                headers.put("Authorization", "Bearer " + mAccessToken);
 
                 httpGetOperation.setHeaders(headers);
 
@@ -164,7 +196,7 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
             }
         });
 
-
+        //endregion
 
     }
 
@@ -178,7 +210,7 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
     }
 
     private void parseJsonOverGson(String response) {
-        Gson gson =  new GsonBuilder().registerTypeAdapter(Date.class, new DateConverter()).create();
+        Gson gson = new GsonBuilder().registerTypeAdapter(Date.class, new DateConverter()).create();
 
         TwitterSearchGSONResponse twitterSearchResponse = gson.fromJson(response, TwitterSearchGSONResponse.class);
         twitterSearchResponse.getStatuses();
@@ -259,7 +291,7 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
         LoaderManager supportLoaderManager = getSupportLoaderManager();
         Bundle bundle = new Bundle();
         bundle.putString("param", "My best string");
-        supportLoaderManager.restartLoader(0, bundle, new LoaderManager.LoaderCallbacks<WorkerOperation.Result>() {
+        supportLoaderManager.restartLoader(ASYNC_LOADER_ID, bundle, new LoaderManager.LoaderCallbacks<WorkerOperation.Result>() {
 
             @Override
             public Loader<WorkerOperation.Result> onCreateLoader(final int id, final Bundle args) {
@@ -368,6 +400,8 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
 
             }
         });
+
+
         presenter.onReady();
     }
 

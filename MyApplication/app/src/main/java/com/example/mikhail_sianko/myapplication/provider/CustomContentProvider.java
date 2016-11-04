@@ -30,7 +30,7 @@ public class CustomContentProvider extends ContentProvider {
     @Nullable
     @Override
     public Cursor query(final Uri pUri, final String[] pStrings, final String pS, final String[] pStrings1, final String pS1) {
-        return mOperations.query(pUri.toString(), pStrings1);
+        return mOperations.query("select * from "+DbHelper.getTableName(getTable(pUri)), pStrings1);
     }
 
     @Nullable
