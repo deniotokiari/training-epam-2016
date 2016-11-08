@@ -1,3 +1,6 @@
+<b>Important</b>: this friday 11.11.2016 will be Q&A session instead of regular class. Please take your projects and prepare questions you'd like to ask. Share this with others.
+Also, 21.11.2016 is most probably that class will be held in room 40-16. TBC
+
 Stats => https://deniotokiari.github.io/training-epam-2016/
 
 Patterns => http://citforum.ru/SE/project/pattern/
