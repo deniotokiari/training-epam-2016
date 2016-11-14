@@ -1,8 +1,10 @@
+<b>TODO's</b>
+https://github.com/Andrei1993ak/Finance-Manager-ver3/commit/188759a82cfd7fccc0e06ba991b17f6db5a61a6c
+
+
 <b>Important</b>: 
 
 Classes will be held on Mondays and Fridays.
-
-This Friday 11.11.2016 will be Q&A session instead of regular class. Please take your projects and prepare questions you'd like to ask. Share this with others.
 
 Also, 21.11.2016 is most probably that class will be held in room 40-16. TBC
 
