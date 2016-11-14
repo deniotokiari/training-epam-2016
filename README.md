@@ -10,6 +10,8 @@ https://github.com/Andrei1993ak/Finance-Manager-ver3/commit/188759a82cfd7fccc0e0
 
 https://github.com/SShopik/Onliner/commit/cfae14580308fd3aade0bce4e19e7b2aef621365
 
+https://github.com/egorikftp/Fitness-Cats/commit/bca5f10159b39318f3f2537750537658d5cf8667
+
 
 <b>Important</b>: 
 
