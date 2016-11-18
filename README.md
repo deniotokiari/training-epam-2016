@@ -6,6 +6,8 @@ https://github.com/deniotokiari/training-epam-2016/blob/master/ide_settings.jar
 
 <b>TODO's</b>
 
+https://github.com/PaulHost/youTubeCastomPlayer/commit/61977a72a36acb72d86c4904074bb9920fdcffec
+
 https://github.com/Andrei1993ak/Finance-Manager-ver3/commit/188759a82cfd7fccc0e06ba991b17f6db5a61a6c
 
 https://github.com/SShopik/Onliner/commit/cfae14580308fd3aade0bce4e19e7b2aef621365
