@@ -1,3 +1,7 @@
+https://github.com/IstiN/schedule - backend/client rep
+https://github.com/IstiN/smartphone/ - config json example
+
+
 <b>Settings</b>
 
 https://github.com/deniotokiari/training-epam-2016/blob/master/ide_settings.jar
