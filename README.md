@@ -1,5 +1,5 @@
 <b>Important.
-27.12.2016(subscribe on this page for updates), will be final class, when you have to demonstrate your project. </b>
+17:55 27.12.2016(subscribe on this page for updates), will be final class, when you have to demonstrate your project. </b>
 
 https://github.com/IstiN/schedule - backend/client rep
 https://github.com/IstiN/smartphone/ - config json example
