@@ -1,3 +1,7 @@
+<b>ВАЖНО!</b>
+Пришлите имя фамилия - как в паспорте мне на почту istin2007@gmail.com, тем кто получил сертификат
+
+
 <b>Important.
 17:55 27.12.2016(subscribe on this page for updates), will be final class(40-16), when you have to demonstrate your project. </b>
 
